@@ -9,7 +9,7 @@ namespace BindingTest.Controllers
     {
         // POST api/test
         [HttpPost]
-        public MyComplexModel Post([FromBody] MyComplexModel model)
+        public MyComplexModel Post(MyComplexModel model)
         {
             return model;
         }

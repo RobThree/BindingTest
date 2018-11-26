@@ -42,7 +42,7 @@ namespace BindingTest.Binding
             if (_formatproperties.TryGetValue(bindingContext.ModelType, out var props) && props.TryGetValue(modelName, out var att))
             {
                 // Do our formatting here
-                var formatted = _numberformatter.FormatNumber(result.Model as string);
+                var formatted = _numberformatter.FormatNumber(result.Model as string, att.NumberFormat);
                 base.SetProperty(bindingContext, modelName, propertyMetadata, ModelBindingResult.Success(formatted));
             } else
             {
