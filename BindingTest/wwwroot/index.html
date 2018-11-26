@@ -20,7 +20,11 @@
                 $.ajax({
                     url: '/api/test',
                     type: "POST",
-                    data: JSON.stringify($("#form").serializeArray()),
+                    data: JSON.stringify({
+                        id: $('#form').find('input[name="id"]').val(),
+                        name: $('#form').find('input[name="name"]').val(),
+                        phonenumber: $('#form').find('input[name="phonenumber"]').val()
+                    }),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
